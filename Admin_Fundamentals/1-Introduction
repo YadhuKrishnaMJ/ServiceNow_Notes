@@ -1,0 +1,34 @@
+Everything in Servicenow is a record in a table
+Application platform as a Service
+.........................................................
+common snow interactions:
+table 
+forms
+workspaces
+dashboards
+service catalog
+knowledge bases
+..........................................................
+Persona types:
+    System Admin
+    Specialized Admin
+    Process User
+    Approver
+    Requestor
+..........................................................
+System admin cannot impersonate security_admin role
+..........................................................
+Users and groups:
+    Users [sys_user]:
+        A person with accesss to instance with unique User ID
+        Add:
+            all>user administration > users > new
+    Group [sys_user_group]:
+        set of users having common purpose 
+        Add:
+            all>user administration > groups > new
+............................................................
+Roles: [sys_user_role]
+    Define Access -> Application,module,ACL 
+    user or group => more than one role 
+............................................................
