@@ -1,5 +1,6 @@
 Everything in Servicenow is a record in a table
 Application platform as a Service
+Single system of record , Single data model -> Data sharing 
 .........................................................
 common snow interactions:
 table 
@@ -15,7 +16,7 @@ Persona types:
     Process User
     Approver
     Requestor
-..........................................................
+..........................................................+
 System admin cannot impersonate security_admin role
 ..........................................................
 Users and groups:
@@ -32,3 +33,15 @@ Roles: [sys_user_role]
     Define Access -> Application,module,ACL 
     user or group => more than one role 
 ............................................................
+Self Service Users:
+    doesnt require specific roles
+............................................................
+Impersonate User:
+    For testing purpose -> System administrator
+    Impersonation log -> glide.sys.log_impersonation
+............................................................
+Add a User or group:
+    All > System Security > Users and Groups 
+............................................................
+Mandatory fields -> asterisk * 
+.............................................................

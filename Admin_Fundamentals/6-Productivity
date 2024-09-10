@@ -1,0 +1,178 @@
+Reports
+..................................................................
+
+All > Reports > View/Run 
+All > Reports > Getting Started 
+Column Context Menu -> generate Reports
+
+...................................................................
+
+Report Types:
+    25 standard types + 3
+
+Modifying existing report is beneficial
+
+....................................................................
+
+Report visibility:
+    My reports , Group , Global , All 
+
+....................................................................
+
+Report Designer:
+    Easily create report
+    Sections:
+        Data -> Data Source
+        Type -> Report Type (28 types)
+        Configure -> Group data, run calculations 
+        Style -> Adjust looks 
+    System tables are restricted from reporting
+
+.....................................................................
+
+Report Actions and Options:
+    Info , sharing menu , Delete report , Save report , Run report 
+    update, Insert, insert and stay, Save as report source 
+
+......................................................................
+
+Report Distribution:
+    Sharing -> Publish 
+    copy report link 
+    open url 
+
+Sharing menu:
+    Share 
+    Schedule 
+    add to dashboard 
+    Export to PDF 
+    Publish 
+
+.......................................................................
+
+Add to dashboard:
+    All > reports > View/Run 
+    Sharing -> Add to dashboard -> add 
+
+........................................................................
+
+Catalog item -> Report based on Variable 
+
+........................................................................
+
+Tags : Categorize, flag , locate records 
+Role -> Admin/Tag_admin 
+
+........................................................................
+
+Performance analystics vs Reporting 
+
+Historical Trends
+What is happening over time vs Where are we today
+
+PA:
+    Widget
+    Tables 
+    Data Collector
+    dashboard
+
+...........................................................................
+
+Dashboard:
+    Multiple PA and Reports 
+
+dashboard -> reponsive/Unresponsive
+All > System Properties > Dashboard Properties -> Enable Responsive dashboard
+
+.............................................................................
+
+Create Dashboard:
+    All > Self-Service > Dashboard
+
+.............................................................................
+
+
+.............................................................................
+Notifications
+.............................................................................
+
+Notifications:
+    Email:
+        All > System Notification > Email > Notifications
+        Outbox:
+            All > System Mailboxes > Outbound > Outbox 
+    SMS 
+    Meeting Invitation 
+
+.............................................................................
+
+Creating Notifications:
+    When to send:
+        Record inserted or updated 
+        Event is fired 
+        Triggered 
+        Script
+
+    Who will recieve
+    What will it contain 
+
+.............................................................................
+
+Email Layouts and Templates:
+    Create Email Layout : All > system Policy > Email > Layouts
+    Apply Layout to Email Template: All > System Notification > Email > Templates 
+    Apply Template to Notification: All > System Notification > Email > Notifications 
+
+
+Email Layout -> HTML Content [sys_email_layout]
+
+..................................................................................
+
+Subscriptions:
+    Inform various activities
+    SMS 
+
+..................................................................................
+
+
+
+..................................................................................
+Additional Configurations
+..................................................................................
+
+Predictive Intelligence:
+    Machine Learning Algorithns -> Set Field Values 
+
+Role -> Admin / ml_admin 
+
+...................................................................................
+
+Now Assist:
+    GenAI
+    Install Products and Plugins 
+    Customize workflow 
+
+...................................................................................
+
+Sidebar:
+    Collaboration
+    Discussion 
+    pin 
+    All, Unread, Favorites 
+
+....................................................................................
+
+Docked Chat Windows (Fulfillers);
+    Fullfillers can access multiple Sidebar discusssion at the same time 
+    Features:
+        Favorites
+        Information 
+        Collapse
+        Close 
+
+......................................................................................
+
+Activity Stream in Sidebar:
+    is also integrated in Side Bar 
+
+......................................................................................

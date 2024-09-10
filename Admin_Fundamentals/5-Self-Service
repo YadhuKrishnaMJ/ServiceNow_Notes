@@ -1,0 +1,220 @@
+Self Service options Baseline:
+    Employee Center:
+        Employee help,services and info
+        to dos,requests,kb,catalogs,agents etc 
+
+    Service Portal:
+        Search kbs,catalogs,requests
+
+    Knowledge Portal:
+        view KB
+
+    CAB Workbench:
+        Change Advisory Board
+        Schedule,plan and manage CAB meetings
+
+    Instance Security Center:
+        Security event monitoring
+
+Additional:
+    Employee center Pro:
+        ML, content campaigns,virtual agents
+
+    Community:
+        blogs and community 
+
+    Customer Support(csm):
+        Customer help via service agents, info etc
+
+    Customer Service(csp):
+        info and support for customers
+....................................................................
+Knowledge Mangement:
+    manage kbs 
+    role -> knowledge_admin 
+    All > self-service > knowledge 
+
+Architecture:
+    Homepage -> Kb and Category
+    import word document -> Create an article 
+
+KB guided setup:
+ guided setup
+ All > Knowledge > Administration > guided setup 
+
+KB Security and visibility;
+    User Criteria:
+        canRead 
+        cantRead
+        canContribute
+        cantContribute
+    All > Knowledge > Knowledge bases 
+    localization -> language local 
+.........................................................................
+Workflows:
+    Approval Publish 
+    Approval Retire
+    Instant Publish 
+    Instant Retire 
+    Publish Knowledge
+    Retire Knowledge
+..........................................................................
+Import a Word Document:
+    All > Knowledge > Articles > Import Articles 
+    kb > category > import > continue 
+
+kb properties:
+    All > Knowledge > Administration > properties 
+...........................................................................
+Now mobile KB:
+    All > Now Mobile App > Knowledge Bases 
+............................................................................
+Companies:
+    All > User Administration > Companies 
+..............................................................................
+
+
+.............................................................................
+Service catalog
+.............................................................................
+Ordering System for services and products 
+
+Catalog Item -> Order -> Request Management -> Catalog task 
+.............................................................................
+Components:
+    Items:
+        Hardware, software, services 
+    
+    Record Producers:
+        Form producing task record, type of catalog item 
+
+    Variables:
+        Item specifications 
+
+    Variable Sets:
+        Collection of variables shared between catalog items 
+
+    Flows:
+        Automation 
+...............................................................................
+
+Service Catalog Items -> All > Service Catalog > Catalog Definitions > Maintain Items 
+Variable Sets -> All > Service Catalog > Catalog Variables > Variable Sets  
+
+................................................................................
+
+Record producers:
+    Simplified forms that generate tasks 
+
+.................................................................................
+
+Order Guides:
+    Assist customers in ordering a complete set of needed items 
+    order multiple related items 
+
+..................................................................................
+
+Service Catalog Item Request Output:
+    Request is created
+    REQ <Hash> Request [sc_request] table:
+        Keep track of order (like shopping cart)
+
+    RITM Requested item [sc_req_item] table:
+        Manage delivery 
+    
+    SCTASK Catalog Task [sc_task] table:
+        tasks for delivery of item
+
+...................................................................................
+
+Catalog Security:
+    User Criteria:
+        Access to Catalog Item 
+    
+...................................................................................
+
+Catalog builder:
+    Guided experience
+    create templates 
+
+All > Service Catalog > Catalog definitions > maintain catalogs -> Service catalog 
+
+Categories:
+    All > Service Catalog > Maintain Categories 
+....................................................................................
+
+To access service catalog as a user:
+    All > Self-service > Service Catalog 
+
+....................................................................................
+
+
+....................................................................................
+Flow Designer
+....................................................................................
+
+Enable process automation 
+
+All > Process Automation > Flow Designer 
+
+....................................................................................
+
+Diagramming View:
+    Trigger Types:
+        Record, Date, Inbound, Service Catalog, SLA Task 
+        
+    Flow Logic Types:
+        Call a workflow 
+        Do following in parallel 
+        Dynamic Flows 
+        Else if 
+        End Flow 
+        For Each 
+        Get Flow Outputs 
+        If 
+        Set Flow variables
+        Wait for a duration of time 
+
+....................................................................................
+
+Triggers:
+    Record Based
+    Date Based
+    Application based 
+
+....................................................................................
+
+Flow Components:
+    Triggers 
+    Conditions
+    Actions:
+        Executed by System 
+        Core Actions:
+            Ask for Approval 
+            Create record 
+            Delete Record 
+            Lookup Record 
+            Wait for COndition 
+
+    Data:
+        Data pills -> drag and drop 
+        created for each action result
+
+    Integration Hub:
+        Pre built set of Integration actions -> Spokes
+        third party app interaction
+....................................................................................
+
+Process Automation Designer: (PAD)
+    Enable cross-enterprise workflows and single unified process
+    Create Process Definition, Activate, System -> process Execution 
+
+....................................................................................
+
+Virtual Agent:
+    Obtain information, make decision and perform common task 
+    Tier two support tasks
+
+....................................................................................
+
+

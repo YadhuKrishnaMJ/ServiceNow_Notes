@@ -1,0 +1,115 @@
+list:
+    set of records
+    row -> record 
+    column -> data value
+.................................................................
+List Views:
+    Different view of lists for each user/role
+.................................................................
+Context Menu:
+    List Control Menu
+    Column options Menu
+    Fields Context Menu
+.................................................................
+List Collector:
+    Used to add existing Fields to a view
+.................................................................
+List Filers:
+    filter condition:
+        Field Operator value
+
+You can add favorite by List Controls Icon
+Breadcrumps can be used to summarize the filter condition
+................................................................
+List Editor -> Edit values in place (double click -> inline editing)
+...................................................................
+List Layout:
+    List Collector
+    List View editing
+    Column context menu > configure > List Layout 
+Admin and personalize_list role can edit list layout for every user
+....................................................................
+List Personalization:
+    List Layout but only for the induvidual user 
+    Temporary 
+....................................................................
+Dot Walking:
+    Gather information from series of tables through reference fields 
+.....................................................................
+To edit application menus and modules go to System Definition > Modules/Application menus
+.....................................................................
+List categories -> group Records 
+Add list filters for them to appear in workspace
+.....................................................................
+Edit tables and forms -> All > System Definition > Tables
+
+
+.....................................................................
+Form Configuration
+.....................................................................
+Table and field configurations:
+    Field:
+        All> System Definition > Dictionary 
+    Tables:
+        All > System Definitions > Tables & Columns/Tables
+.....................................................................
+ Field Types :
+    Common ones are
+    reference
+    Date/ Time 
+    String -> 255 chars more -> Multi Line TextBox
+    Choice 
+    True/false 
+......................................................................
+Form Configuration:
+    Form Design:
+        Page Header
+        Field Navigator 
+        Form Layout
+    Formatter:
+        display info not in record 
+        Activity,process,approval summarizer, parent breadcrumbs
+    Add or remove related lists from configure > Related lists 
+
+    Form Layout:
+        Record > Configure > Form Layout 
+
+    Personlize Form:
+        Changes only visible to You
+        prop:- glide.ui.personalize_form.role
+.......................................................................
+Templates:
+    Form fields populated automatically
+    more(threedots) > Toggle Template Bar 
+.......................................................................
+Workspaces Form Overview:
+    Located in Details Tab
+    Fields in Details Panel 
+    Activity Stream -> additional Panel
+
+    Templates:
+        From magnifying glass 
+        Custom:
+            + icon 
+            Enter Name 
+            Enter Fields 
+            Save
+        Add groups for visibility
+.......................................................................
+Advanced Configuration
+.......................................................................
+Choices and References -> Dropdown and refernce to other tables
+
+Choice List:
+    User select -> predefined set of Choices
+    can be declared dependent on other field 
+    adding a choice:
+        record > right click on choice field > show choice list > new > submit
+
+    Deleting choice:
+        Configure Dictionary
+........................................................................
+Add .list to name of a table in all search menu to enter the specific table
+........................................................................
+
+

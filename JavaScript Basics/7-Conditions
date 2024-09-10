@@ -1,0 +1,50 @@
+if Statement:
+
+if (x > y){
+    alert('Hello')
+}
+
+....................................................................
+
+if else:
+
+if(x > y){
+    alert('Hello')
+} else{
+    alert('Bye')
+}
+
+....................................................................
+
+Switch Statement:
+
+switch(fruits) {
+    case "Banana":
+        alert('Hello')
+        break 
+    
+    case "apple" :
+        alert('bye')
+        break 
+}
+
+....................................................................
+ 
+Default Case:
+
+switch(fruits) {
+    case "Banana":
+        alert('Hello')
+        break 
+    
+    case "apple" :
+        alert('bye')
+        break 
+    
+    default:
+        alert('neighter')
+}
+
+....................................................................
+
+

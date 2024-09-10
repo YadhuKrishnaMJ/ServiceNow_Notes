@@ -1,0 +1,54 @@
+Baseline Implementation -> servicenow instance without any config
+....................................................................
+instance -> copy of snow environment , customer specific
+Prod, Dev, Test Instance 
+snow -> single tenant,multi instance, isolated db  
+....................................................................
+Configuration: 
+    No code 
+    general configs like updating list views etc
+
+Customization:
+    New features which isnt in platform 
+....................................................................
+Update sets : Move data between instances
+....................................................................
+Company logo and name  -> All > System Properties > My Company
+....................................................................
+Tables extending CMDB are usually free, but others might cost 
+....................................................................
+Application vs Plugin
+
+Application:
+    via servicenow store
+    by snow or partners
+    custom app scope 
+    larger
+
+plugins:
+    via All > All available plugins > all > plugins / v.plugin.list
+    by snow 
+    custom/global 
+    small/big 
+.....................................................................
+Application Scoping:
+    Restrict access to app files and data between apps 
+
+Demo Data is loaded normally during plugin installation
+
+Plugins:
+    All>System Definition> Plugins
+
+Application:
+    All > System applucations> All available applications> All
+....................................................................
+
+Change Banner:
+    All > system properties > My Company
+
+Change Browser Label:
+    All > System properties > System
+
+System Properties:
+    sys_properties.list
+.....................................................................

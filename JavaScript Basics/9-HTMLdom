@@ -1,0 +1,60 @@
+HTML DOM
+
+....................................................................
+
+getElementById() Method:
+
+document.getElementById("demo").innerHTML = "Hello";
+
+....................................................................
+
+getElementsByTagName() Method:
+
+document.getElementsByTagName("p")[0].innerHTML = "Hello" #changes the first matching tag
+
+....................................................................
+
+getElementsByClassName() Method:
+
+document.getElementsByClassName("test")[0].innerHTML = "Hello"
+
+....................................................................
+
+.src attribute:
+
+document.getElementById("image").src = "newpic.jpg";
+
+....................................................................
+
+.value attribute
+
+document.getElementById("myText").value = "Bruh";
+
+....................................................................
+
+.style.color attribute
+
+document.getElementById("demo").style.color = "red";
+
+....................................................................
+
+.style.fontSize attribute
+
+document.getElementById("demo").style.fontSize = "40px";
+
+....................................................................
+
+.style.display attribute:
+
+document.getElementById("demo").style.display = "none";
+
+....................................................................
+
+eventListener Method:
+
+document.getElementById("demo").addEventListener("click", myFunction);
+
+....................................................................
+
+
+

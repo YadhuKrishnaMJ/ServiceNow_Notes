@@ -1,0 +1,74 @@
+Declare Variables:
+
+let carName = 'Volvo'
+....................................................................................
+
+Document Editing:
+    
+document.getElementById("demo").innerHTML = x + y;
+
+....................................................................................
+
+Alert Box:
+
+alert(z);
+
+....................................................................................
+
+Single line variable definition:
+
+let firstName = "John", lastName = "Doe", age = 35
+
+....................................................................................
+
+Object datatype:
+
+const x = {
+    firstName: "Yadhu",
+    lastName: "Krishna"
+};
+
+....................................................................................
+
+Functions:
+
+function greet()  {
+    alert('Hello there!')
+}
+
+greet()
+
+.....................................................................................
+
+Return Statement:
+
+function name() {
+    return "Yadhu Krishna M J"
+}
+
+document.getElementById("owner").innerHTML = name();
+
+.....................................................................................
+
+Objects:
+
+const person = {
+    firstName: "Yadhu",
+    lastName: "Krishna"
+};
+
+alert(person.firstName)
+
+.....................................................................................
+
+Events:
+
+onclick event:
+
+<button onclick = "alert('Hello')"> Click me. <button> 
+
+Mouse hover event:
+
+<div onmouseover = "this.stle.backgroundColor = 'red"> myDiv </div>
+
+.....................................................................................

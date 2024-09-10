@@ -1,0 +1,296 @@
+Snow Infrastructure
+...................................................
+Built on relational databse
+Tables, Records , Fields , values
+System Dictionary -> Definition of each table and field 
+    All > System Definition > Dictionary
+Config:
+    System Definitions:
+        tables
+        tables and columns-> to modify field values
+        Schema Map 
+        Data dictionary tables
+........................................................
+Table:
+    Records ID -> sys_id -> 32 char unique ID 
+    number format for table:
+        All > System Definition > Number Maintenance
+........................................................
+Field Attributes:
+    Label -> User friendly 
+    Name -> System friendly
+    Data -> Actual data
+........................................................
+Reference Fields:
+    Reference lookup icon(magnifying glass)
+    Contains unique id (sys_id)
+........................................................
+Table Relationships:
+    One to Many:
+        Reference Fields in a table
+            Reference Field:
+                Select record from related table 
+            Glide List:
+                Allow select Multiple records on a table by glide list 
+            Documents ID Field:
+                Select a record on any table in the instance
+    Many to Many:
+        Bidirectional Relationships 
+        sys_collections.list & sys_m2m.list
+
+    Database views:
+        Tables joined using database views plugins
+        for reporting purpose 
+        Read Only 
+        System Definition > Database views 
+
+    Extensions:
+        A Table extending another table  
+........................................................
+Extended Tables:
+    Parent Class -> Child Class 
+    Task -> Incident 
+    Create unique fields in child class with 
+........................................................
+Base Table -> parent class which is not extended at all 
+Core Table -> Snow base system , not necessarily base table 
+Task Table -> Core, Base, Parent 
+Custom Table -> Created by user
+                x_ -> Scoped application (sandboxed)
+                u_ -> Global scope application   
+.........................................................
+Schema Map:
+    Graphical rep of table relation
+    All > System Definition > Tables 
+        Go to Table
+        related links 
+        show schema map 
+.........................................................
+Create new tables at System definition > Tables/Tables & columns
+..............................................................
+During creation of the table you can add it in a Application menu using Create Module checkbox
+........................................................................
+Click Edit button next to an application menu to edit it
+................................................................
+
+
+..........................................................
+Application Access and Controls
+..........................................................
+
+User Authentication/Login:
+    Users
+    Groups
+    Roles
+
+Application and Module Access:
+    Governed by Roles 
+
+Database Access:
+    Tables
+    Global System Properties
+    Access Control Rules
+
+..........................................................
+
+Security Modules:
+    All > System Properties > Security 
+    All > System Security > Access Control 
+    All > System Security > High Security Settings 
+...........................................................
+Elevate Roles:
+    user menu > Elevate Role > Select and Update
+    Privelege end upon session ending, also uncheck box
+
+    Allows ACL modification 
+...........................................................
+Access Control:
+    Security rule -> Restrict permission
+
+    Row Level 
+    Column level 
+
+    CRUD -> create, read, update, Delete 
+    Additional Snow operation:
+        Execute scripts
+        Edit_ci_relations
+        Save_as_template
+        Report_on
+        Personalize_choices
+............................................................
+Admins cannot impersonate Security_admin Role 
+only admins have security_admin role in baseline implementation
+............................................................
+ACL of table -> <Table Name>.CONFIG > Access Controls Tab
+Automatically crud acl are created on table creation
+............................................................
+ACL:
+    Operation (CRUD)
+    Object (table, field)
+    Permission (Roles, conditions, Scripts)
+.............................................................
+Access Control Rule Types:
+    table.-None- :
+        applies to whole table
+
+    table.field :
+        only one field 
+
+    table.* : 
+        rule applies to every field other than table.field
+.............................................................
+Best ACL Practices:
+    while * , always use None Access Control 
+    Grant Access -> None
+    Deny Access -> None and *
+..............................................................
+Evaluation Process of ACL:
+    Table, then field -> Most specific to mose general 
+    both table and field should be true for user Access
+    Child tables inherit parent ACLs 
+..............................................................
+
+..............................................................
+Importing Data 
+..............................................................
+Import Set -> Tool used to import data from various data sources
+
+Roles -> Admin / import_admin
+
+Data Sources:
+    Local:
+        XML,CSV,Excel 
+    
+    Network:
+        HTTP/FTP
+
+    LDAP (Lightweight Directory Access protocol)
+    JDBC (Java Database Connectivity)
+
+Import Set Table -> Staging area 
+Transform Maps -> Guide for moving data from Import set Tables to Target Tables 
+
+Target Table 
+.....................................................................
+Import Set Table:
+    Staging area, automatically populated based on imported data
+    
+Automatic Mapping Utility:
+    All fields match in target table 
+    Related Links > Auto Map Matching Fields
+
+Mapping Assist Utility:
+    mapping environment 
+    single field to multiple fields possible 
+    after matching:
+        related links > Transform
+.....................................................................
+Loading Import sets Table -> All > System Import Sets > Load Data  
+Transforming -> All > System Import Sets > Create Tranform Map, Auto Map Matching Fields, Mapping assist, Transform
+Coalescence -> All > System Import Sets > Administration > Tranform Maps 
+Clean up -> All > System Import Sets > Import Set Tables > Cleanup 
+.....................................................................
+Coalesce Fields:
+    Field used as unique key during imports 
+    If existing -> Update 
+    else -> New record 
+    Types:
+        Single Field
+        Multiple Field 
+        Conditional
+....................................................................
+
+....................................................................
+CMDB and Configuration Items:
+
+CMDB:
+    Configuration Management Database 
+    DB of CI
+    permission:
+        asset
+        itil 
+        itil_admin
+        cmdb_read
+    
+CI:
+    Configuration Item 
+    ex:
+        tangible and intangible items 
+        computers, devices, apps, services
+
+Logical model of company infrastructure 
+CMDB Tables:
+    Base configuration item(cmdb)
+    Configuration item(cmdb_ci)
+    CI relationship(cmdb_rel_ci)
+
+CMDB use in ITSM:
+    incident Management
+    problem management 
+    change management 
+    request management 
+
+ITIL -> IT infrastructure Library
+.....................................................................
+CMDB Workspace:
+    All > CMDB Workspace > CMDB workspace or workspaces -> CMDB workspace
+    Plugins -> CMDB CSDM Support, CSDM Activation 
+..........................................................................
+Dependency View:
+    interactive graphical interface -> visualise relationships 
+
+Starting node -> Root CI 
+Upstream and downstream 
+
+Icons -> Active incident,problem,affected CI for a task 
+........................................................................
+CI Class Manager:
+    location to explore CMDB Class heirarchy,CI Table definitons, class CIS 
+    Tree view format
+
+Location -> All > Configuration > CI CLASS Manager
+Basic Info Tab -> Details for the selected class 
+Attributes -> Display table attributes(columns)
+            all -> Attributes derieved or added for CI class
+            Derieved -> Derieved from parent class 
+            Added -> attributes created specifically for CI class 
+...........................................................................
+CI Relation Editor:
+    Configure Item Relationships 
+    All > configuration > Relationships > Suggested Relationships 
+............................................................................
+CI form:
+    contains relevant attribute data 
+    toggle -> CI health dashboard and form view 
+    contains info about relationships -> related items toolbar
+............................................................................
+CSDM:
+    Common service Data Model 
+
+    CS:
+        Service level definitions 
+    DM:
+        CMDB Framework enable multiple configuration strategy 
+    
+    guidelines and definitions for service reporting and modeling
+    correctly map app data with CMDB tables \
+    standard terms and Definitions
+    best practises for CMDB Data modelling and data management 
+    Service level modelling 
+    recommended mappings 
+    use case:
+        how to do an activity 
+        inscope and out of scope activities 
+        CI and tables associated 
+        benefits 
+        track asset
+............................................................................
+Servicenow Discovery and Service Mapping:
+    Discovery:
+        Updates CMDB with new CI 
+        uses MID (Management , Instrumentation and Discover) Server 
+        HOrizontal
+    Service Mapping:
+         Map CI with service components 
+         Top down mapping 
+.............................................................................

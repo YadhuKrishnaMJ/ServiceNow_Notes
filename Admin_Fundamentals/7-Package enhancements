@@ -1,0 +1,182 @@
+Scripting Areas in ServiceNow:
+    Data Policies
+    UI Policy and UI Policy Actions 
+    UI Actions 
+    Business Rules 
+    Client Scrips 
+    ACL Scripts 
+    Flow Scripts 
+    Transform Maps
+    Script Includes 
+    UI Macros, Scripts, Properties, Pages 
+    
+.........................................................................................
+
+UI policy:
+    Can make field read only, mandatory or hidden
+
+Data Policy:
+    Enforce Mandatory Data & imports , read only fields
+
+UI Action:
+    Make Save button Visible 
+
+Business Rule:
+    trigger confirmation email or any action on change or submission
+
+Client Scripts:
+    create prompts
+
+............................................................................................
+
+Scripting in Snow:
+    Using Javascript 
+
+Roundtrip = Request + Response 
+
+............................................................................................
+
+UI Policy and UI Policy Actions:
+    UI Policy:
+        Execute on client side 
+        set Fields:
+            Mandatory
+            Hidden 
+            Read only   
+
+    UI policy Actions -> determines what happens on form after ui policy:
+        Mandatory -> Require value to save 
+        Hidden -> Field is hidden 
+        Read only -> Value cannot be changed 
+
+All > System UI > UI Policies
+
+.............................................................................................
+
+Data Policy:
+    Enforce Data Consistency
+    similar to UI Policy
+    Applied to Form , Import Sets , Web Services 
+    Runs on Server Side 
+
+..............................................................................................
+
+UI Actions:
+    Add buttons, links and context menus 
+
+All > System Properties > Ui Properties
+
+.............................................................................................
+
+Client Scripts:
+    Make Real time changes to appearance of UI, Forms 
+    Execute client side 
+    Types:
+        onCellEdit() -> cell value change through list editor 
+        onChange() -> on Field Value change 
+        onLoad() -> on form load 
+        onSubmit()-> on form Submission 
+
+.............................................................................................
+
+Catalog Client Script Example:
+    Control behaviour of catalog items when presented to users 
+
+..............................................................................................
+
+Business Rule:
+    on Display, Insert, Delete , Update, Table query    
+    Before or after db actio =n 
+    When Setting:
+        Before 
+        After 
+        Async(queued)
+        Display 
+    Executes on Server Side 
+    Not realtime only on db action 
+    g_scratchpad -> Display business rules us shared scratchpad object
+
+..............................................................................................
+Update Sets
+..............................................................................................
+
+Application Spokes:
+    Specify what is accessible within an application or outside of it
+    Prevents conflicts 
+    Private scoping for each application
+
+...............................................................................................
+
+System update Sets:
+    Group of configuration changes to be moves 
+    Use named update sets over default update set 
+    XML File:
+        set of record details 
+        List of configs 
+        A state whether another instance can revtrieve and apply the update set 
+    Point in time XML Snapshot of process records 
+    [sys_update_xml]
+    Most recent changes are taken for merges 
+    All > System Update Sets > Local Update Sets 
+    Batch Update sets -> Group update sets 
+
+................................................................................................
+
+What is captured in update sets?
+    Business rules
+    Client Scripts 
+    UI policies 
+    Fields 
+    Forms 
+    Reports 
+    Tables 
+    Views 
+    List Config 
+    Roles 
+    Flows/Published Workflows
+
+Unload Dashboard to include them 
+
+..................................................................................................
+
+Create and Select Update Sets:
+    All > System Update Sets > Local Update Sets -> new 
+
+    After Config wark -> update state to complete
+
+...................................................................................................
+
+Applying an update set:
+    All > System Update Sets > Retrieved Update Sets -> Import Update set from XML 
+    Retrieve -> Preview -> Commit 
+Remote Instance:
+    All > System Update Sets > Update Sources > New 
+
+...................................................................................................
+
+additional Tools :
+    Performance Dashboard:
+        Monitor Performance 
+
+    System Diagnostics Stats Tool:
+        Performance Evaluation 
+        stats.do 
+
+    Automated Test framework:
+        Run automated test 
+        test steps 
+
+    App engine Studio:
+        Create applications 
+
+    Delegated Developers:
+        Permissions for each type of role
+
+    Upgrades and Releases:
+        
+    Instance Scan 
+    Health Scan 
+    Release Notes 
+    upgrade centre 
+
+.....................................................................................................
