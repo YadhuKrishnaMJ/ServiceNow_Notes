@@ -38,6 +38,7 @@ Roundtrip = Request + Response
 
 UI Policy and UI Policy Actions:
     UI Policy:
+        feature to dynamically change behaviour of forms using UI based on condition 
         Execute on client side 
         set Fields:
             Mandatory
@@ -73,9 +74,48 @@ Client Scripts:
     Execute client side 
     Types:
         onCellEdit() -> cell value change through list editor 
+
+                    function onCellEdit(sysIds, table, oldValues, newValues, callback) {
+                        if (newValues.priority != oldValues.priority) {
+                            alert('The priority has changed!');
+                        }
+                        callback();
+                    }            
+
         onChange() -> on Field Value change 
+
+                    function onChange(control, oldValue, newValue, isLoading) {
+                        if (isLoading || newValue === '') {
+                            return; // Exit if the form is still loading or the field is empty
+                        }
+                        
+                        if (newValue == 'High') {
+                            g_form.setMandatory('due_date', true);
+                            g_form.showFieldMsg('due_date', 'Due Date is mandatory when priority is High', 'error');
+                        } else {
+                            g_form.setMandatory('due_date', false);
+                        }
+                    }
+                
         onLoad() -> on form load 
+
+                    function onLoad() {
+                        if (g_form.isNewRecord()) {
+                            g_form.setDisplay('assigned_to', false);
+                        }
+                    }
+
         onSubmit()-> on form Submission 
+
+                    function onSubmit() {
+                        var description = g_form.getValue('description');
+                        if (description == '') {
+                            g_form.addErrorMessage('Description field is mandatory');
+                            return false; // Prevent form submission
+                        }
+                        return true; // Allow form submission if validation passes
+                    }
+
 
 .............................................................................................
 
@@ -86,12 +126,22 @@ Catalog Client Script Example:
 
 Business Rule:
     on Display, Insert, Delete , Update, Table query    
+    Has access to current,previous field values
     Before or after db actio =n 
     When Setting:
-        Before 
-        After 
-        Async(queued)
-        Display 
+        Before:
+            Before db Actions
+
+        After:
+            After db action 
+
+        Async(queued):
+            Asynchronous, for resource intensive tasks 
+
+        Display:
+            On form load etc 
+            used to fetch data from serverside to client scripts via g_scratchpad
+             
     Executes on Server Side 
     Not realtime only on db action 
     g_scratchpad -> Display business rules us shared scratchpad object
@@ -100,7 +150,7 @@ Business Rule:
 Update Sets
 ..............................................................................................
 
-Application Spokes:
+Application Scope:
     Specify what is accessible within an application or outside of it
     Prevents conflicts 
     Private scoping for each application

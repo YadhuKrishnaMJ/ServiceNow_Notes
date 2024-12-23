@@ -1,0 +1,189 @@
+Chatgpt Link: https://chatgpt.com/share/670bb926-3ec0-800e-82cb-0835abb2c2f8
+
+Paragraph Tags:
+    <p> </p>
+
+....................................................................................
+
+Anchor Tag (a):
+
+<a href= "https://www.w3schools.com"> This is a link </a> #created hyperlink
+
+....................................................................................
+
+Heading tag:
+
+<h1> This is a heading </h1>
+
+h1 -> h6 biggest to smallest
+
+....................................................................................
+
+Title attribute: (hover info)
+
+<p title = "Extra info"> Test </p>
+
+.....................................................................................
+
+width,height attribute:
+
+<img src = 'myimg.jpg' width = '250' height = '400'>
+
+.....................................................................................
+
+href attribute:
+
+<a href = "example.com" > this is a link </a>
+
+.....................................................................................
+
+alt attribute when image not displayed:
+
+<img src = "myimg.jpg" alt = "my image">
+
+.....................................................................................
+
+Horizontal Rule <hr>:
+
+<hr>
+
+.....................................................................................
+
+Line Break:
+
+<br>
+
+.....................................................................................
+
+Preserve spaces and line breaks:
+
+<pre>
+    Content
+    Content
+    Content
+</pre>
+
+.....................................................................................
+
+inline CSS:
+
+<p style = "color:blue;"> This is a paragraph </p>
+
+<p style = "font-family:courier;"> This is a paragraph </p>
+
+<p style="text-align:center;">This is a paragraph.</p>
+
+<p style="font-size:50px;">This is a paragraph.</p>
+
+<p style="background-color:yellow;">This is a paragraph.</p>
+
+.....................................................................................
+
+Strong tag: (bold)
+
+<p>
+blah blah <strong> important </strong> blah blah
+</p>
+
+.....................................................................................
+
+Emphasis Tag: (italics)
+
+<p>
+blah blah <em> emphasis </em> blah blah
+</p>
+
+.....................................................................................
+
+Highlight Tag (Yellow):
+
+<p>
+HTML is <mark>FUN</mark> to learn!
+</p>
+
+.....................................................................................
+
+subscript tag:
+
+<sub>2</sub>0
+
+.....................................................................................
+
+Strike Tag:
+
+<del>blue</del>
+
+.....................................................................................
+
+Quotation Tag:
+
+<q> cool </q>
+
+.....................................................................................
+
+Blockquote cite tag:
+
+<blockquote cite = example.com> 
+block 
+<blockquote>
+
+.....................................................................................
+
+Bidirectional Override tag:
+
+<bdo dir = 'rtl'> #right to left
+    bruh
+</bdo>
+
+.....................................................................................
+
+Abbreviation Tag:
+
+<abbr title ="World health organization"> WHO </abbr>
+
+.....................................................................................
+
+Comment Tag:
+
+<!-- comment -->
+
+.....................................................................................
+
+HTML Colors:
+
+<p style = "color:rgb(255,255,255)">
+
+white hex color = #ffffff
+
+hsla format = hsla(0,100%,50%,0.5) no hue, 100% saturation, 50% lightness, and 50% transparency.
+
+.....................................................................................
+
+Style Tag:
+
+<style>
+body{
+    color: 'blue';
+}
+</style>
+
+.....................................................................................
+
+Open link in new window attribute:
+
+<a href = "example.com" target = "_blank"> link </a>
+
+.....................................................................................
+
+Bookmark attribute for links within same page:
+
+<a href = "#mytext"> Jump to new Text </a>
+
+.....................................................................................
+
+Favicon icon tag:
+
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+.....................................................................................
+

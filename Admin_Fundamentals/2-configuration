@@ -26,10 +26,11 @@ Application:
     larger
 
 plugins:
-    via All > All available plugins > all > plugins / v.plugin.list
+    via All > All available plugins > all > plugins / v.plugin.list or system definition > plugins
     by snow 
     custom/global 
     small/big 
+
 .....................................................................
 Application Scoping:
     Restrict access to app files and data between apps 
@@ -40,7 +41,7 @@ Plugins:
     All>System Definition> Plugins
 
 Application:
-    All > System applucations> All available applications> All
+    All > System applications> All available applications> All
 ....................................................................
 
 Change Banner:

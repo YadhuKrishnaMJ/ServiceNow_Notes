@@ -1,0 +1,12 @@
+Associate Level:
+    Inquiries 
+    Basic Issues 
+    Document Incidents 
+    Contribute to Knowledge Bases
+
+ServiceNow Interfaces:
+    The Next Unified Experience
+    Now Mobile App
+    Service Portal 
+    Employee Center 
+    

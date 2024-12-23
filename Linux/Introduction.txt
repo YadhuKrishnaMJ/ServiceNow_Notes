@@ -1,0 +1,379 @@
+ChatGPT Link: https://chatgpt.com/share/670b702e-d424-800e-a8a7-6f94818e3afb
+
+
+Linux:
+    Free and Open Source Operating System
+    More Secure and faster than windows
+    GUI and Command line Mode 
+Ubuntu:
+    Linux Distribution like Debian
+Unix:
+    Propreitary OS software
+    Linux is based on Unix
+
+Kernal:
+    Resource manager
+    Connect software and hardware 
+    First program to be loaded 
+    low level system software 
+
+Application -> Shell -> Kernel -> Hardware 
+................................................
+Linux Storage:
+    Tree Structure
+    / -> root
+................................................
+Interfaces:
+    CLI:
+        Command Line Interface
+
+    GUI:
+        Graphical User Interface
+................................................
+$ -> Regular User   # -> Super User
+/ -> Root directory
+
+User@machine:/$
+................................................
+Users:
+
+................................................
+Commands in Linux:
+...............................................
+FileManagement
+    Ls:
+        All files/directories in directories
+
+        Options:
+            ls -l:
+                Shows details of the files
+                Permissions-group-user-
+            ls -a:
+                Shows Hidden Files too
+            ls -t:
+                Shows by time sorted
+            ls -r:
+                Reverse order of files  
+
+    pwd:
+        Print working directory
+
+    cd <directory>:
+        Change directory
+        cd .. -> go back
+        cd ~ -> Go to home directory
+
+    mkdir <directory>:
+        Make a new Directory
+
+    rmdir <directory>:
+        Remove a directory
+        -p option:
+            Remove parent directory too if it becomes empty after subdirectory is deleted
+
+    touch <file.ext>:
+        Creates a new blank file
+
+    rm <File.txt>:
+        removes the file
+        -r : recursively delete folder and files 
+        -f: Force delete 
+
+    mv <file> <location>:
+        Moves a file to the specified location
+        rename:
+            mv <oldname> <newname>
+
+    cp <file> <location>:
+        Copies the file to the destination
+        Option: 
+            -R recursively copy directory
+        Eg:
+            cp /home/terminal/yadhu/new.txt /home/terminal
+
+    history:
+        Prints history of commands used
+    
+    sudo apt install <package>:
+        installs a specific pakage 
+
+.............................................................................
+Process Management:
+    top:
+        shows list of processes ordered by resource consumption
+        interactive:
+            k : kill process by PID 
+            M : sort by mem 
+            P : sort by processor use 
+            u : display process for specific user 
+            q : exit
+        options:
+            -h : help
+            -u <username> : for specific user 
+            -p <PID> : for specific process pid 
+            -n <numbe> : top n numbers 
+        htop: improved version
+    ps:
+        Shows all processing running in the system
+        options:
+            ps -a:
+                Shows all background processes also
+            ps -e:
+                display more info
+            ps -f:
+                full format listing more detailed info
+            ps -p <PID>:
+                specific PID process process shown
+            ps -C <command/name>:
+                specific process by name/command
+            ps aux
+
+    kill <PID>:
+        Terminates the mentioned process with the PID
+
+    killall <options> <Name>:
+        Kill all processes with the name
+        -i : Interactive kill 
+        -v : verbose kill 
+        -r : regular experession search
+    bg:
+        send job to background 
+        sleep 100
+        ctrl z 
+        bg
+
+    fg:
+        send job to foreground
+        fg % <ID>
+
+    jobs:
+        show all jobs sent to bg
+.........................................................
+File Editing:
+    vim <filename>:
+        source editor for linux
+        Instructions:
+            press i -> insert mode and write text
+                i: insert text before cursor 
+                a: insert text after the cursor
+                o: New line below 
+                O: New line above 
+            esc -> return to view mode
+            : ->
+                :q! -> quit without save
+                :wq -> save
+                :w -> save
+    Nano:
+        Simple User friendly editor
+        No modes
+
+    cat [options] <file>:
+        Concatenate multiple files for read/display/merge
+        cat > newfile : create new file 
+        cat >> file : append content to file 
+        cat -n file : show line numbers
+        cat file1 file2 > combinedfile : combine files 
+
+    grep [options] pattern [file]:
+        pattern matching using regex 
+        options:
+            -i : ignore case 
+            -v : invert match 
+            -r : Recursively search in directory 
+            -c : count the number of match 
+            -E : multiple patterns
+
+        regex:
+            . : single character
+            ^ : Match Beginning 
+            $ : Match the End 
+            * : 0 or more 
+            + : one or more 
+            ? : 0 or 1 
+            [] : any char in list eg: [A-Z]= Any letter [^aeiou]= not vowel
+            () : pattern grouping 
+            {} : quantity eg- {2,4} = 2 to 4 occurences 
+        
+
+    awk 'pattern {action}' <filename>:
+        pattern scanning and processing 
+        considers each line like a record 
+        eg: 
+            awk '{print $1}' file.txt
+        separator option -F:
+            awk -F':' '{print $1}' /etc/passwd
+            
+        pattern matching:
+            awk '/anuradha/' file.txt 
+        
+    tail [options] [file]:
+        show last part of text 
+        ex:
+            tail filename.txt
+            tail -n 5 filename.txt 
+            tail -n +5 filename.txt 
+
+    more [file]:
+        Simple file viewr, one screen at a time
+        space and enter for navigation 
+
+    less [file]:
+        both forward and backward 
+        arrows
+
+    find [path] [options] [expression]:
+        search by name and regex:
+            find /path/to/search -name "filename" 
+
+    wc : 
+        count number of characters in a file 
+    
+    $env :
+        print all environment variables 
+.........................................................
+Networking commands:
+    ping:
+        reachability of host 
+        ping google.com 
+        sends ICMP ECHO requests 
+
+    ipconfig:
+        display ip configurations
+
+    netstat:
+        display network conenctions, routing tables
+
+    curl:
+        transfer data using protocols 
+        curl url 
+
+    wget:
+        Download files from web
+        wget url 
+.........................................................
+Disk management:
+    df:
+        disk file usage 
+        df -h (human readable)
+
+    du [options] [path/file]:
+        file space usage
+.........................................................
+System info:
+    uname:
+        System info 
+
+    hostname:
+        display set host name
+
+    uptime:
+        how long system has been running 
+
+    free:
+        system memory usage 
+
+    dmesg:
+        boot messages
+.........................................................
+Misc:
+    history:
+    alias:
+    man:
+    tar:
+    gzip:
+    ssh:
+.........................................................
+
+    Permissions format in ls:   
+        r-> Read
+        w-> Write
+        x-> execute
+
+        -rwerwerwe -> user,group,others
+        intial - -> d if directory file
+
+    chmod <number> <file>:
+        Sets the read write Permissions accroding to the number
+        number:
+            each digit represents binary bits of rwx
+            5 -> 101 -> r-x
+            7 -> 111 -> rwx
+            6 -> 110 -> rw_
+            first digit -> user
+            second digit -> group
+            third digit -> others 
+
+    chown [user:group] [file]:
+        change ownership
+        chown username:groupname file.txt 
+
+    chgrp [group] [file]:
+        change group ownership
+        chgrp developers project.txt 
+
+......................................................... 
+
+Bash Commands:
+    Echo:
+        Print a line to the terminal
+        Ex:
+            echo yadhu
+    
+    printf:
+        Print formatted text to a terminal  
+        Ex:
+            printf "This is yadhu /n"
+..........................................................
+
+Pipes | :
+    pipe output to input of other command, chain command 
+
+    find a process by its ID:
+        ps -e | grep -i <PID> 
+
+Output Redirection: 
+    > overwrite 
+    >> append 
+
+input Redirection:
+    <  
+
+Here Documents:
+    <<  Multiple lines of input to a command 
+
+
+..........................................................
+Extras:
+
+Fstab : mount file systems automatically 
+BASH: Bourne Again Shell 
+LILO: Boot loader
+SWAP space: Space in hardware when RAM is full (usually twice of RAM)
+Process States: created, Ready, Running, waiting Terminated 
+LVM : Logical Volumne Manager 
+/proc : interface to kernal ds, info about processes 
+daemon : Programs running in background for long time 
+cron(daemon,normal user) and anacron (non daemon,super user) : schedule tasks 
+first process: init pid 1
+Inode: unique name to each file 
+PID: unique id to each process 
+
+Networking:
+
+NIC teaming and Network bonding: multiple redundant NIC for better load balancing and failover safe 
+SSH: Secure shell, Connect remote servers securely 
+Hardlink vs SoftLink:  Hardlink is like the mirror copy of file, Softlink is a pointer to that file 
+Standard streams: stdin, stdout, stderr 
+
+etc/resolv.conf: configure DNS names server 
+etc/hosts: hostname to IP address 
+
+nfs : file system for accessing remote systems 
+dd: vi delete command 
+/etc/ : config files location 
+ulimit: limit user process resources 
+systemctl: status of a daemon
+run or stop a service:  
+    systemctl start <process>
+    systemctl stop <process>
+crontab : schedule jobs 

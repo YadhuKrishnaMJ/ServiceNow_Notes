@@ -1,0 +1,342 @@
+Client Side:
+    UI Policies
+    Client Scripts
+
+...................................
+
+Server Side:
+    Business Rules
+    Scheduled Jobs 
+    Script Actions 
+
+...................................
+
+Trigger:
+    When to execute 
+
+Script:
+    The Action 
+
+...................................
+
+UI Policy 
+
+...................................
+
+Form and field Behaviour 
+Client Side 
+Faster than Client Scripts 
+Descriptions -> pseudoname 
+
+...................................
+
+UI Policy Trigger Conditions:
+    Condition builders over scripting for performance
+    if blank always run 
+
+Data policies(non scriptable) for mandatory/read only for fields on record not in a form 
+
+...................................
+
+UI Policy Actions:
+
+All > Client Development > UI Policies 
+
+...................................
+
+Options:
+    Global: Apply to all views 
+    Reverse if false: Well duh 
+    onLoad: execute on load and form change 
+    Inherit: Apply to extended tables also
+
+...................................
+
+UI Policy Scripting:
+    Script tab -> Advanced View 
+    Options:
+        Run scripts
+        Execute if True 
+        Execute if False
+         - Reverse if false must be selected to run Execute if false script 
+    
+    onContion() -> Condition builder -> True 
+
+...................................
+
+
+...................................
+
+Client Scripts
+    
+...................................
+
+Client Scripts:
+    Execute in browser/Client Side 
+
+Use Cases:
+    Modify choice list options 
+    One field respond to another
+    Hide/show form sections 
+    Display an alert 
+    Make fields mandatory
+    Hide fields
+
+...................................
+
+Types:
+    OnLoad():
+        Pre-populate form content or appearance
+        triggers loads before form load
+
+    onSubmit():
+        Data validation against multiple fields
+
+    onChange():
+        Validate field values on change
+        generate alerts etc
+
+
+...................................
+
+Options and Triggers:
+    Name: Name of client script 
+    Table: To which applies 
+    UI Type: Desktop/mobile/both
+    Type: OnChange(), OnLoad(), OnSubmit(), OnCellEdit()
+        Field Name for Onchange() and OnCellEdit()
+
+    Active: Duh 
+    Inherited: Extended table inherits 
+    Global: Apply to all views 
+        Unselected -> View: Specify view 
+
+...................................
+
+Client Script vs UI Policies:
+    Both can execute on form load and value change 
+    Both use same API
+    Only client Script can run on save/submit/update 
+    Only UI policy have access to condition builder 
+    UI Policies execute after client scripts 
+    Client Scripts have access to prev values 
+
+...................................
+
+
+...................................
+
+GlideForm and GlideUser
+
+...................................
+
+Both Automatically instantiated for Client-Side Scripts
+
+GlideForm:
+    Properties include fields from Forms
+    Methods to manage form fiels and values:
+        g_form.setValue(field,value)
+        g_form.getValue(field)
+        g_form.setDisplay(field,boolean)
+        g_form.setReadOnly(field,boolean)
+        g_form.setMandatory(field,boolean)
+        g_form.addErrorMessage("Error")
+        g_form.addInfoMessage("msg")
+        g_form.showFieldMsg("msg")
+        g_form.isNewRecord()
+
+GlideUser:
+    Properties/Values -> User info 
+    Methods to check roles
+    personalize user experience 
+        g_user.hasRole('hr_agent')
+        g_user.getUserID()
+        g_user.getUserName()
+        g_user.getFullName()
+        g_user.hadRoles()
+        g_user.getRoles()
+
+GlideAjax:
+    Allow client scripts to call server side code in a script include
+        Instantiate:
+            var ga = new GlideAjax('<script Include Class>')
+            ga.addParam('sysparm_name','<script include method>')
+            ga.getXML()
+            
+...................................
+
+Scripting Assistance:
+    Contextual help 
+    ctrl + Spacebar -> Classes 
+    . -> Access properties 
+
+...................................
+
+...................................
+
+ServerSide Scripts
+
+...................................
+
+Access control : Trigger based operation 
+
+Business Rule : 
+    Insert/Update/Delete/Query
+    Before/After/Async/Display
+
+Scheduled Jobs:
+    Trigger based on Schedule 
+
+Script Actions:
+    Triggers when Events are generated 
+
+Script Includes:
+    Trigger When Called 
+
+UI Actions:
+    Triggers when user clicks on a widget 
+
+Workflow/flow:
+    Trigger when conditions are met
+
+......................................
+
+GlideUSer and GlideForm is not available in serverside scripts 
+
+......................................
+
+g_scratchpad:
+    Display business rules pass data to client side scripts using g_scratchpad.
+    Values passed as strings 
+    No properties by default, Any client Script can use g_scratchpad object passed in from the server 
+
+    Server Side Display Business Rule:
+        g_scratchpad.prop1 = current.field1;
+
+    on Client Side:
+        g_form.setValue('FieldName',g_scratchpad.prop1)
+
+......................................
+
+
+
+......................................
+
+Script Include
+
+......................................
+
+Reusable server sided javascript code 
+Library of functions 
+Not executed unless called 
+
+......................................
+
+Protection policy can be applied:
+
+    --None--
+    Read Only
+    Protected 
+
+    For devs to protect their intellectual property
+
+......................................
+
+Anatomy of script include:
+    create class and prototype (functions and constructors)
+    Call class with the method 
+    
+    var myinclude = Class.create()
+    myinclude.prototype = {
+        intialize: function(){
+
+        },
+        type: 'myinclude'
+    };
+
+......................................
+
+......................................
+
+Scheduled scripts
+
+......................................
+
+
+Automated periodic piece of logic on specific time optionally recurring 
+
+run option:
+    Specify when to run the script/trigger 
+
+Test:
+    Execute now button 
+
+Scheduled jobs:
+
+all > System Scheduler > Scheduled Jobs > Scheduled Jobs 
+
+......................................
+
+Event:
+    Entry in Event Queue 
+    Logic must be written to respond to Events
+
+Event Registry:
+    Table of Events 
+
+......................................
+
+Glide Record and Glide System 
+
+......................................
+
+Glide Record:
+    Interact with database from serverside scripts and client side(glideAjax)
+
+Basic Query:
+
+    var gr = new GlideRecord('incident'); # Initialize a GlideRecord object for the 'incident' table
+    gr.query();  # Perform a query (retrieves all records in the table)
+
+    while (gr.next()) {  # Iterate through each record in the result set
+        gs.print(gr.number);  # Print the 'number' field of each incident record
+    }
+
+Query with Conditions:
+
+    var gr = new GlideRecord('incident');
+    gr.addQuery('priority', 1);  # Add a condition where 'priority' equals 1
+    gr.addQuery('state', '!=', 6);  # Add another condition where 'state' is not equal to 6
+    gr.query();
+
+    while (gr.next()) {
+        gs.print('Incident Number: ' + gr.number + ' - Priority: ' + gr.priority);
+    }
+
+other Methods:
+    gr.get(SysID) : get a particular record 
+    gr.update(); : update a record (used with get)
+    gr.initialize() and gr.insert() : insert new recorrd to database 
+    gr.deleteRecord(): delete the record (used with get)
+
+...............................................................................................................
+
+Glide System:
+    Server side API, Interact witb system info,logging, user messages, dates etc 
+
+gs.info() 
+gs.warn() 
+gs.error() 
+
+gs.addInfoMessage()
+gs.addErrorMessage()
+
+gs.now()
+
+gs.getUserId()
+gs.hasRole()
+gs.getUserName() 
+
+gs.executeNow()
+
+.................................................................................................................

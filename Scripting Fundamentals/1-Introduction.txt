@@ -1,0 +1,8 @@
+Platform scripting:
+    Javascript for complex configurations and behaviours
+
+Execution locations:
+    Client side 
+    Server side 
+    Mid server 
+
